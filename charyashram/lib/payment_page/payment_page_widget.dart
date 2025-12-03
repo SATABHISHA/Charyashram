@@ -7,7 +7,6 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'payment_page_model.dart';
 export 'payment_page_model.dart';
 
@@ -72,13 +71,13 @@ class _PaymentPageWidgetState extends State<PaymentPageWidget> {
                       size: 24.0,
                     ),
                     onPressed: () {
-                      print('IconButton pressed ...');
+                      debugPrint('IconButton pressed ...');
                     },
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/banner.png',
+                      'assets/images/app_launcher_icon.png',
                       width: 200.0,
                       height: 200.0,
                       fit: BoxFit.contain,
@@ -720,7 +719,7 @@ class _PaymentPageWidgetState extends State<PaymentPageWidget> {
                         ),
                         FFButtonWidget(
                           onPressed: () {
-                            print('Button pressed ...');
+                            debugPrint('Button pressed ...');
                           },
                           text: 'CONTINUE',
                           options: FFButtonOptions(

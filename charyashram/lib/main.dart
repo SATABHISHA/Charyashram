@@ -1,4 +1,6 @@
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '/backend/api_requests/api_manager.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +17,11 @@ void main() async {
   usePathUrlStrategy();
 
   await FlutterFlowTheme.initialize();
+  final prefs = await SharedPreferences.getInstance();
+  final savedToken = prefs.getString('auth_token');
+  if (savedToken != null && savedToken.isNotEmpty) {
+    ApiManager.setAccessToken(savedToken);
+  }
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();

@@ -2,12 +2,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+// Removed unused 'dart:ui' and 'provider' imports.
 import 'payment_custom_webview_model.dart';
 export 'payment_custom_webview_model.dart';
 
@@ -82,7 +82,7 @@ class _PaymentCustomWebviewWidgetState
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/banner.png',
+                      'assets/images/app_launcher_icon.png',
                       width: 200.0,
                       height: 200.0,
                       fit: BoxFit.contain,

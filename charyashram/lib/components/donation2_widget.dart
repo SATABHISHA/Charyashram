@@ -4,10 +4,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'donation2_model.dart';
 export 'donation2_model.dart';
 
@@ -411,7 +409,7 @@ class _Donation2WidgetState extends State<Donation2Widget> {
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
+                            debugPrint('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -498,7 +496,7 @@ class _Donation2WidgetState extends State<Donation2Widget> {
                                         size: 16.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        debugPrint('IconButton pressed ...');
                                       },
                                     ),
                                     Container(
@@ -557,7 +555,7 @@ class _Donation2WidgetState extends State<Donation2Widget> {
                                         size: 16.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        debugPrint('IconButton pressed ...');
                                       },
                                     ),
                                   ].divide(const SizedBox(width: 8.0)),
@@ -607,7 +605,7 @@ class _Donation2WidgetState extends State<Donation2Widget> {
                                         size: 16.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        debugPrint('IconButton pressed ...');
                                       },
                                     ),
                                     Container(
@@ -666,7 +664,7 @@ class _Donation2WidgetState extends State<Donation2Widget> {
                                         size: 16.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        debugPrint('IconButton pressed ...');
                                       },
                                     ),
                                   ].divide(const SizedBox(width: 8.0)),
@@ -716,7 +714,7 @@ class _Donation2WidgetState extends State<Donation2Widget> {
                                         size: 16.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        debugPrint('IconButton pressed ...');
                                       },
                                     ),
                                     Container(
@@ -775,7 +773,7 @@ class _Donation2WidgetState extends State<Donation2Widget> {
                                         size: 16.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        debugPrint('IconButton pressed ...');
                                       },
                                     ),
                                   ].divide(const SizedBox(width: 8.0)),
@@ -1040,7 +1038,7 @@ class _Donation2WidgetState extends State<Donation2Widget> {
                 ),
                 FFButtonWidget(
                   onPressed: () {
-                    print('Button pressed ...');
+                    debugPrint('Button pressed ...');
                   },
                   text: 'Donate Now',
                   options: FFButtonOptions(

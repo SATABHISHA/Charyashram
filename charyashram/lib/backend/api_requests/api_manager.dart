@@ -229,6 +229,14 @@ class ApiManager {
   // If your API calls need authentication, populate this field once
   // the user has authenticated. Alter this as needed.
   static String? _accessToken;
+  /// Set the access token for authenticated API requests.
+  ///
+  /// Use this once a user logs in so future API calls include the
+  /// `Authorization: Bearer <token>` header automatically.
+  static void setAccessToken(String? token) => _accessToken = token;
+
+  /// Clear the stored access token (e.g., on logout).
+  static void clearAccessToken() => _accessToken = null;
   // You may want to call this if, for example, you make a change to the
   // database and no longer want the cached result of a call that may
   // have changed.

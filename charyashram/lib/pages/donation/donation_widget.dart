@@ -5,11 +5,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
+// Removed 'dart:ui' import: use elements from material.dart
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+// Removed provider import (unused)
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'donation_model.dart';
 export 'donation_model.dart';
@@ -235,18 +235,16 @@ class _DonationWidgetState extends State<DonationWidget> {
                                             .override(
                                               font: GoogleFonts.inter(
                                                 fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                fontStyle: FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                               ),
                                               color: const Color(0xFFF1F4F8),
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              fontStyle: FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
                                             ),
                                       ),
                                       Container(
@@ -480,7 +478,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                                               size: 20.0,
                                             ),
                                             onPressed: () {
-                                              print('IconButton pressed ...');
+                                              debugPrint('IconButton pressed ...');
                                             },
                                           ),
                                         ].divide(const SizedBox(width: 8.0)),
@@ -586,7 +584,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                                                           size: 16.0,
                                                         ),
                                                         onPressed: () {
-                                                          print(
+                                                          debugPrint(
                                                               'IconButton pressed ...');
                                                         },
                                                       ),
@@ -746,7 +744,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                                                           size: 16.0,
                                                         ),
                                                         onPressed: () {
-                                                          print(
+                                                          debugPrint(
                                                               'IconButton pressed ...');
                                                         },
                                                       ),
@@ -812,7 +810,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                                                           size: 16.0,
                                                         ),
                                                         onPressed: () {
-                                                          print(
+                                                          debugPrint(
                                                               'IconButton pressed ...');
                                                         },
                                                       ),
@@ -883,7 +881,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                                                           size: 16.0,
                                                         ),
                                                         onPressed: () {
-                                                          print(
+                                                          debugPrint(
                                                               'IconButton pressed ...');
                                                         },
                                                       ),
@@ -949,7 +947,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                                                           size: 16.0,
                                                         ),
                                                         onPressed: () {
-                                                          print(
+                                                          debugPrint(
                                                               'IconButton pressed ...');
                                                         },
                                                       ),
@@ -1020,7 +1018,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                                                           size: 16.0,
                                                         ),
                                                         onPressed: () {
-                                                          print(
+                                                          debugPrint(
                                                               'IconButton pressed ...');
                                                         },
                                                       ),
@@ -1540,6 +1538,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                                   ),
                                   FFButtonWidget(
                                     onPressed: () async {
+                                      final localContext = context;
                                       _model.apiResultrof =
                                           await CashFreePaymentsApiGroup
                                               .razorPayGetOrderCall
@@ -1567,11 +1566,12 @@ class _DonationWidgetState extends State<DonationWidget> {
                                         )!;
                                         safeSetState(() {});
 
-                                        context.pushNamed(
-                                            PaymentWebviewWidget.routeName);
+                                        if (!mounted) return;
+                                        localContext.pushNamed(
+                                          PaymentWebviewWidget.routeName);
                                       } else {
                                         await showDialog(
-                                          context: context,
+                                          context: localContext,
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(

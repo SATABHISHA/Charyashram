@@ -2,10 +2,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'component_payment_dialoge_model.dart';
 export 'component_payment_dialoge_model.dart';
 
@@ -86,7 +84,7 @@ class _ComponentPaymentDialogeWidgetState
                       size: 20.0,
                     ),
                     onPressed: () {
-                      print('IconButton pressed ...');
+                      debugPrint('IconButton pressed ...');
                     },
                   ),
                 ].divide(const SizedBox(width: 8.0)),
@@ -1067,7 +1065,7 @@ class _ComponentPaymentDialogeWidgetState
                 children: [
                   FFButtonWidget(
                     onPressed: () {
-                      print('Button pressed ...');
+                      debugPrint('Button pressed ...');
                     },
                     text: 'Close',
                     options: FFButtonOptions(
@@ -1103,7 +1101,7 @@ class _ComponentPaymentDialogeWidgetState
                   ),
                   FFButtonWidget(
                     onPressed: () {
-                      print('Button pressed ...');
+                      debugPrint('Button pressed ...');
                     },
                     text: 'Proceed to Pay ₹1950.00',
                     options: FFButtonOptions(

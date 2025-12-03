@@ -6,7 +6,7 @@ import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+// Removed provider import (unused)
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'component_payment_dialouge_model.dart';
 export 'component_payment_dialouge_model.dart';
@@ -3351,7 +3351,8 @@ class _ComponentPaymentDialougeWidgetState
                 children: [
                   FFButtonWidget(
                     onPressed: () async {
-                      Navigator.pop(context);
+                      final localContext = context;
+                      Navigator.pop(localContext);
                     },
                     text: 'Close',
                     options: FFButtonOptions(
@@ -3390,6 +3391,7 @@ class _ComponentPaymentDialougeWidgetState
                   ),
                   FFButtonWidget(
                     onPressed: () async {
+                      final localContext = context;
                       _model.apiResultrofOrder = await CashFreePaymentsApiGroup
                           .razorPayGetOrderCall
                           .call(
@@ -3411,10 +3413,11 @@ class _ComponentPaymentDialougeWidgetState
                         )!;
                         safeSetState(() {});
 
-                        context.pushNamed(PaymentCustomWebviewWidget.routeName);
+                        if (!mounted) return;
+                        localContext.pushNamed(PaymentCustomWebviewWidget.routeName);
                       } else {
                         await showDialog(
-                          context: context,
+                          context: localContext,
                           builder: (alertDialogContext) {
                             return WebViewAware(
                               child: AlertDialog(

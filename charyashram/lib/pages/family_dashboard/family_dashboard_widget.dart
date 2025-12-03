@@ -5,11 +5,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/component_payment_dialouge/component_payment_dialouge_widget.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
+import '/backend/api_requests/api_manager.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '/pages/login_page_new/login_page_new_widget.dart';
 import 'family_dashboard_model.dart';
 export 'family_dashboard_model.dart';
 
@@ -100,7 +101,59 @@ class _FamilyDashboardWidgetState extends State<FamilyDashboardWidget> {
                       size: 24.0,
                     ),
                     onPressed: () {
-                      print('IconButton pressed ...');
+                      debugPrint('IconButton pressed ...');
+                    },
+                  ),
+                ),
+              ),
+              Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 16.0, 0.0),
+                  child: FlutterFlowIconButton(
+                    borderRadius: 12.0,
+                    buttonSize: 44.0,
+                    fillColor: Colors.white,
+                    icon: Icon(
+                      Icons.logout_rounded,
+                      color: FlutterFlowTheme.of(context).primary,
+                      size: 24.0,
+                    ),
+                    onPressed: () async {
+                      final confirmed = await showDialog<bool>(
+                        context: context,
+                        builder: (ctx) => AlertDialog(
+                          title: const Text('Confirm logout'),
+                          content: const Text('Are you sure you want to logout?'),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.of(ctx).pop(false),
+                              child: const Text('Cancel'),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.of(ctx).pop(true),
+                              child: const Text('Logout'),
+                            ),
+                          ],
+                        ),
+                      );
+                      if (confirmed != true) {
+                        return;
+                      }
+                      final localContext = context;
+                      final prefs = await SharedPreferences.getInstance();
+                      final rememberMe = prefs.getString('temple') != null && prefs.getString('family') != null && prefs.getString('password') != null;
+                      // Clear token and user data
+                      ApiManager.clearAccessToken();
+                      await prefs.remove('auth_token');
+                      await prefs.remove('userAuth');
+                      if (!rememberMe) {
+                        await prefs.remove('temple');
+                        await prefs.remove('family');
+                        await prefs.remove('password');
+                      }
+                      if (!mounted) return;
+                      localContext.goNamed(LoginPageNewWidget.routeName);
                     },
                   ),
                 ),
@@ -1418,7 +1471,7 @@ class _FamilyDashboardWidgetState extends State<FamilyDashboardWidget> {
                                       ),
                                       FFButtonWidget(
                                         onPressed: () {
-                                          print('Button pressed ...');
+                                          debugPrint('Button pressed ...');
                                         },
                                         text: 'View',
                                         options: FFButtonOptions(

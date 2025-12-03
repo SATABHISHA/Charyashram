@@ -4,10 +4,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+// Removed 'dart:ui' and unused 'provider' import.
 import 'payment_details_page_model.dart';
 export 'payment_details_page_model.dart';
 
@@ -76,13 +75,13 @@ class _PaymentDetailsPageWidgetState extends State<PaymentDetailsPageWidget> {
                       size: 24.0,
                     ),
                     onPressed: () {
-                      print('IconButton pressed ...');
+                      debugPrint('IconButton pressed ...');
                     },
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/banner.png',
+                      'assets/images/app_launcher_icon.png',
                       width: 200.0,
                       height: 200.0,
                       fit: BoxFit.contain,
@@ -465,7 +464,7 @@ class _PaymentDetailsPageWidgetState extends State<PaymentDetailsPageWidget> {
                         ),
                         FFButtonWidget(
                           onPressed: () {
-                            print('Button pressed ...');
+                            debugPrint('Button pressed ...');
                           },
                           text: 'CONTINUE',
                           options: FFButtonOptions(
